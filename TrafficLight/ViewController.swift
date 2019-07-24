@@ -17,13 +17,6 @@ class ViewController: UIViewController {
     
     var activeColor = ""
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        redLight.layer.cornerRadius = redLight.frame.size.width / 2
-        yellowLight.layer.cornerRadius = yellowLight.frame.size.width / 2
-        greenLight.layer.cornerRadius = greenLight.frame.size.width / 2
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +28,13 @@ class ViewController: UIViewController {
         
         greenLight.backgroundColor = .green
         greenLight.alpha = 0.3
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        redLight.layer.cornerRadius = redLight.frame.size.width / 2
+        yellowLight.layer.cornerRadius = yellowLight.frame.size.width / 2
+        greenLight.layer.cornerRadius = greenLight.frame.size.width / 2
     }
     
     @IBAction func switchLightButton(_ sender: Any) {
