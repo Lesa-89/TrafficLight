@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,70 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6d-st-dMa">
+                                <rect key="frame" x="117" y="64" width="180" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="O6d-st-dMa" secondAttribute="height" multiplier="1:1" id="qL0-lu-XEy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lA-Gq-H5L">
+                                <rect key="frame" x="117" y="264" width="180" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03n-Qq-d4X">
+                                <rect key="frame" x="117" y="464" width="180" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzq-FB-dqo">
+                                <rect key="frame" x="20" y="781" width="374" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="E6w-l0-Lmk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="35"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="switchLightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEI-u7-HYy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81399849031146709" green="0.9667463178004112" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="03n-Qq-d4X" firstAttribute="top" secondItem="6lA-Gq-H5L" secondAttribute="bottom" constant="20" id="0N0-hu-69g"/>
+                            <constraint firstItem="kzq-FB-dqo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="03n-Qq-d4X" secondAttribute="bottom" constant="40" id="4gC-7u-n1C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kzq-FB-dqo" secondAttribute="trailing" constant="20" id="AuW-4o-78P"/>
+                            <constraint firstItem="03n-Qq-d4X" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BYg-oZ-HOx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O6d-st-dMa" secondAttribute="trailing" priority="999" constant="117" id="Fpc-4k-Q5m"/>
+                            <constraint firstItem="6lA-Gq-H5L" firstAttribute="width" secondItem="O6d-st-dMa" secondAttribute="width" id="Mcc-MA-D1t"/>
+                            <constraint firstItem="6lA-Gq-H5L" firstAttribute="height" secondItem="O6d-st-dMa" secondAttribute="height" id="SNQ-C9-kZH"/>
+                            <constraint firstItem="O6d-st-dMa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="999" constant="117" id="WYe-ET-nNM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kzq-FB-dqo" secondAttribute="bottom" constant="30" id="Wqw-mt-TfQ"/>
+                            <constraint firstItem="6lA-Gq-H5L" firstAttribute="top" secondItem="O6d-st-dMa" secondAttribute="bottom" constant="20" id="YDI-Ue-DGY"/>
+                            <constraint firstItem="03n-Qq-d4X" firstAttribute="width" secondItem="O6d-st-dMa" secondAttribute="width" id="dik-8G-xIg"/>
+                            <constraint firstItem="O6d-st-dMa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="l9h-lq-KhY"/>
+                            <constraint firstItem="6lA-Gq-H5L" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lJA-he-YJU"/>
+                            <constraint firstItem="O6d-st-dMa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="n8g-8C-Mol"/>
+                            <constraint firstItem="kzq-FB-dqo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nOn-0I-nBO"/>
+                            <constraint firstItem="03n-Qq-d4X" firstAttribute="height" secondItem="O6d-st-dMa" secondAttribute="height" id="oqy-qu-YjP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="greenLight" destination="03n-Qq-d4X" id="pih-71-AI0"/>
+                        <outlet property="redLight" destination="O6d-st-dMa" id="ldn-55-ybH"/>
+                        <outlet property="switchButton" destination="kzq-FB-dqo" id="8Xl-rz-jcw"/>
+                        <outlet property="yellowLight" destination="6lA-Gq-H5L" id="i4W-WD-8iU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="100.44642857142857"/>
         </scene>
     </scenes>
 </document>
